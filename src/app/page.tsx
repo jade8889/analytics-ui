@@ -3,10 +3,6 @@ import Script from "next/script";
 import Footer from "../components/Navigation/footer";
 import Slider from "react-slick";
 import { chains } from "../statics/helpers/chains";
-import useChain from "../hooks/useChain";
-import LiveBets from "../components/common/LiveBets";
-import useRequestSent from "../hooks/events/useRequestSent";
-import useRequestFulfilled from "../hooks/events/useRequestFulfilled";
 import { useState } from "react";
 import { Wheel as WheelType } from "@/src/statics/helpers/types";
 import { LanguageType, useLanguageContext } from "../contexts/LanguageContext";
@@ -28,12 +24,6 @@ export default function Home() {
     slidesToShow: 2,
     slidesToScroll: 2,
   };
-
-  const chainId = useChain();
-
-  const [wheel, setWheel] = useState<WheelType>(
-    chains[chainId].contracts.wheel[0]
-  );
 
   return (
     <>

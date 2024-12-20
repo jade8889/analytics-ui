@@ -1,13 +1,11 @@
 "use client";
 import Link from "next/link";
-import WalletConnectButton from "../common/WalletConnectButton";
 import { useEffect, useMemo, useState } from "react";
 
 import {
   LanguageType,
   useLanguageContext,
 } from "@/src/contexts/LanguageContext";
-import VIPSystemDropdown from "./VIPSystemDropdown";
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);

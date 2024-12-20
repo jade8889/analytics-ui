@@ -13,7 +13,7 @@ import {
   chains,
 } from "../statics/helpers/chains";
 import { useContractRead } from "wagmi";
-import useChain from "../hooks/useChain";
+
 import { formatEther, parseEther } from "viem";
 
 export enum LanguageType {
