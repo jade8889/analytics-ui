@@ -1,17 +1,13 @@
 "use client";
 import Script from "next/script";
-import Footer from "../components/Navigation/footer";
+
 import Slider from "react-slick";
-import { chains } from "../statics/helpers/chains";
+
 import { useState } from "react";
-import { Wheel as WheelType } from "@/src/statics/helpers/types";
-import { LanguageType, useLanguageContext } from "../contexts/LanguageContext";
 
 // import Parallax from "parallax-js";
 
 export default function Home() {
-  const language = useLanguageContext();
-
   const settings = {
     fade: true,
     dots: true,
@@ -35,47 +31,8 @@ export default function Home() {
                 <div className="info_space ">
                   <div className="info_icon"></div>
                   <div className="space">
-                    <div className="text">
-                      {language?.language == LanguageType.CN
-                        ? "完全可验证的智能合约"
-                        : "Fully verifiable smart contracts"}
-                    </div>
+                    <div className="text">Fully verifiable smart contracts</div>
                   </div>
-                </div>
-                <div className="big_title ">
-                  {language?.language == LanguageType.CN
-                    ? "链上游戏"
-                    : "On-chain gaming"}
-                  <div className="mb-2" />
-                  {language?.language == LanguageType.CN
-                    ? "优势尽显"
-                    : "With an edge"}
-                </div>
-
-                <div className="description ">
-                  {language?.language == LanguageType.CN
-                    ? "限时高达x8888倍乘数 101% RTP"
-                    : "Up to x8888 multipliers with 101% RTP for a limited time"}
-                </div>
-
-                <div className="buttons">
-                  <a
-                    target="_blank"
-                    href={`https://aerodrome.finance/swap?from=eth&to=0x628c5ba9b775dacecd14e237130c537f497d1cc7`}
-                    className="text-green-800 btn btn-white"
-                  >
-                    {language?.language == LanguageType.CN
-                      ? "买 $JADE (很快)"
-                      : "Buy $JADE"}
-                  </a>
-                  <a
-                    className="btn btn-border-white"
-                    href="https://t.me/Jaderoll"
-                    target="_blank"
-                  >
-                    {language?.language == LanguageType.CN ? "月亮 " : "Moon "}
-                    &#127765;
-                  </a>
                 </div>
               </div>
               <div className="right-block back-shadow ">
@@ -97,22 +54,7 @@ export default function Home() {
                           <div className="coin bg4"></div>
                         </div> */}
                       </div>
-                      {/* <div className="spin bg-[url(/img/wheel/outline-circle1.png)]"> */}
-                      <div className="spin bg-[url(/img/wheel/outline-circle.png)]">
-                        <div className="arrow in " id="arrowCheck"></div>
-                        <div className="wheel" id="wheel">
-                          <div className="lamp pos1"></div>
-                          <div className="lamp pos2"></div>
-                          <div className="lamp pos3"></div>
-                          <div className="lamp pos4"></div>
-                          <div className="lamp pos5"></div>
-                          <div className="lamp pos6"></div>
-                          <div className="lamp pos7"></div>
-                          <div className="lamp pos8"></div>
-                          <div className="wheel-center-default"></div>
-                        </div>
-                        <div className="centered-logo"></div>
-                      </div>
+
                       {/* <div className="scene_paralax front-scene">
                         <div className="item" data-depth="0.12">
                           <div className="coin bg5"></div>
@@ -156,36 +98,6 @@ export default function Home() {
                 </Slider>
               </div>
             </div>
-            <div className="box-event box-rbg d-flex d-flex-center mt-50 mobile-d-block start-statistics ">
-              <div className="info-block">
-                <div className="ttl">
-                  {language?.language == LanguageType.CN
-                    ? "总投注"
-                    : "TOTAL WAGERED"}
-                </div>
-                <div className="ttl-in">308,212,306 $JADE</div>
-              </div>
-
-              <div className="info-block">
-                <div className="ttl">
-                  {" "}
-                  {language?.language == LanguageType.CN
-                    ? "总个体投注"
-                    : "TOTAL BETS"}
-                </div>
-                <div className="ttl-in">7,620</div>
-              </div>
-
-              <div className="info-block">
-                <div className="ttl">
-                  {" "}
-                  {language?.language == LanguageType.CN
-                    ? "总用户数"
-                    : "TOTAL USERS"}
-                </div>
-                <div className="ttl-in">349</div>
-              </div>
-            </div>
           </div>
         </div>
         {/* <div
@@ -193,7 +105,7 @@ export default function Home() {
           id="jade-token"
         >
           <div className="wrap">
-            {language?.language == LanguageType.CN ? (
+             ? (
               <>
                 <h2>JADEROLL 生态系统</h2>
                 <div className="text-xl text-[#acacac] text-center">
@@ -338,7 +250,6 @@ export default function Home() {
             )}
           </div>
         </div> */}
-        <Footer />
       </div>
       <Script
         src="/parallax.min.js"

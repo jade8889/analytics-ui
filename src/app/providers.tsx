@@ -1,24 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {
-  RainbowKitProvider,
-  connectorsForWallets,
-  darkTheme,
-} from "@rainbow-me/rainbowkit";
-import {
-  trustWallet,
-  coinbaseWallet,
-  rabbyWallet,
-  metaMaskWallet,
-  safeWallet,
-  walletConnectWallet,
-  ledgerWallet,
-} from "@rainbow-me/rainbowkit/wallets";
+
 import { configureChains, createConfig, sepolia, WagmiConfig } from "wagmi";
-import { alchemyProvider } from "@wagmi/core/providers/alchemy";
-// import { base } from "wagmi/chains";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+
 import { defineChain } from "viem";
 
 import { ApolloClient, InMemoryCache } from "@apollo/client";
@@ -91,56 +76,6 @@ const baseSepolia = defineChain({
   },
 });
 
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [
-    base,
-    // sepolia,
-    baseSepolia,
-    // hardhat
-  ],
-  [
-    // alchemyProvider({ apiKey: "mGsqrKffb5Yt_jmlL0UsiyPz8ZT7jBCv" }),
-    jsonRpcProvider({
-      rpc: (chain) => ({ http: chain.rpcUrls.default.http[0] }),
-    }),
-  ]
-);
-
-const projectId = process.env.NEXT_PUBLIC_APP_ID
-  ? process.env.NEXT_PUBLIC_APP_ID
-  : "";
-
-const demoAppInfo = {
-  appName: "JadeRoll",
-};
-
-const connectors = connectorsForWallets([
-  {
-    groupName: "Recommended",
-    wallets: [
-      rabbyWallet({ chains }),
-      metaMaskWallet({ projectId, chains }),
-      coinbaseWallet({ appName: "JadeRoll", chains }),
-      safeWallet({ chains }),
-    ],
-  },
-  {
-    groupName: "Other",
-    wallets: [
-      walletConnectWallet({ projectId, chains }),
-      trustWallet({ projectId, chains }),
-      ledgerWallet({ projectId, chains }),
-    ],
-  },
-]);
-
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-  webSocketPublicClient,
-});
-
 const client = new ApolloClient({
   uri: "https://api.studio.thegraph.com/query/49805/jade/version/latest", // Replace with your GraphQL endpoint
   cache: new InMemoryCache(),
@@ -150,17 +85,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => setMounted(true), []);
 
-  return (
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider
-        theme={darkTheme()}
-        chains={chains}
-        appInfo={demoAppInfo}
-      >
-        <ApolloProvider client={client}>{mounted && children}</ApolloProvider>
-      </RainbowKitProvider>
-    </WagmiConfig>
-  );
+  return <ApolloProvider client={client}>{mounted && children}</ApolloProvider>;
 }
-
-export { publicClient };

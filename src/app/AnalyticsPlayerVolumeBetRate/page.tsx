@@ -7,15 +7,12 @@ import {
   GET_TOTAL_BETS,
 } from "@/src/utils/queries";
 import React from "react";
-import { useAccount } from "wagmi";
 import { useQuery } from "@apollo/client";
 import { formatEther } from "viem";
 import StatsTable from "@/src/components/common/StatsTable";
 import { convertTimestampToDate } from "@/src/utils";
 
 const AnalyticsPlayerVolumeBetRate: React.FC = () => {
-  const { address } = useAccount();
-
   const { data, loading, error } = useQuery(GET_JADE_WHEEL_BET_RATE, {
     // variables: {
     //   owner: address?.toLowerCase(),

@@ -92,10 +92,6 @@ a {
 .bg-black {
   background: #000;
 }
-.bg-kind-stones {
-  background: url(../images/bg-kind-stones.jpg) center no-repeat;
-  background-size: cover;
-}
 .bg-radius {
   border-radius: 60px 60px 0 0;
 }
@@ -292,12 +288,7 @@ h3:after {
   margin-left: 8px;
   padding-left: 14px;
 }
-.navigation__box .info_bar .price span.down {
-  color: #6cea80;
-  background-image: url(../images/price_down.svg);
-  background-repeat: no-repeat;
-  background-position: left;
-}
+
 .navigation__box .info_bar .buttons {
   margin-top: 9px;
 }
@@ -397,26 +388,9 @@ h3:after {
 .navigation__box .bot .languages li a.active {
   color: #fff;
 }
-.logo {
-  background: url(../images/logo.svg) center no-repeat;
-  width: 340px;
-  height: 114px;
-  display: block;
-}
-.logo-white {
-  background: url(../images/logo_white.svg) center no-repeat;
-  width: 340px;
-  height: 114px;
-  display: block;
-}
+
 .content__box {
   padding-left: 270px;
-}
-.start-screen {
-  background: url(../images/background.png) center no-repeat;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
 }
 .start-screen.jade-wheels {
   height: inherit;
@@ -486,25 +460,7 @@ h3:after {
   opacity: 0;
   visibility: hidden;
 }
-.info_space .info_icon {
-  background-image: url(../images/help.svg);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 2;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 4px;
-  transition: 0.3s;
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 0.692308px solid #fff;
-  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(3.5px);
-  right: 10px;
-  top: 9px;
-  cursor: pointer;
-}
+
 .info_space .info_icon:hover ~ .space {
   opacity: 1;
   visibility: visible;
@@ -609,188 +565,6 @@ h3:after {
 .scene_paralax .coin {
   position: absolute;
 }
-.roulette-view .scene_paralax .coin.bg1 {
-  background: url(../images/coin_blur/1.png) center no-repeat;
-  width: 88px;
-  height: 76px;
-  top: 22%;
-  left: 7%;
-}
-.roulette-view .scene_paralax .coin.bg2 {
-  background: url(../images/coin_blur/2.png) center no-repeat;
-  width: 107px;
-  height: 115px;
-  top: 10%;
-  left: 70%;
-}
-.roulette-view .scene_paralax .coin.bg3 {
-  background: url(../images/coin_blur/3.png) center no-repeat;
-  width: 107px;
-  height: 96px;
-  top: 71%;
-  left: 5%;
-}
-.roulette-view .scene_paralax .coin.bg4 {
-  background: url(../images/coin_blur/4.png) center no-repeat;
-  width: 68px;
-  height: 75px;
-  top: 46%;
-  left: 90%;
-}
-.roulette-view .scene_paralax .coin.bg5 {
-  background: url(../images/coin/1.png) center no-repeat;
-  width: 107px;
-  height: 116px;
-  top: 0;
-  left: 16%;
-}
-.roulette-view .scene_paralax .coin.bg6 {
-  background: url(../images/coin/2.png) center no-repeat;
-  width: 120px;
-  height: 108px;
-  top: 75%;
-  left: 90%;
-}
-.roulette-view .scene_paralax .coin.bg7 {
-  background: url(../images/coin/3.png) center no-repeat;
-  width: 82px;
-  height: 69px;
-  top: 36%;
-  left: 88%;
-}
-.roulette-view .scene_paralax .coin.bg8 {
-  background: url(../images/coin/4.png) center no-repeat;
-  width: 59px;
-  height: 65px;
-  top: 17%;
-  left: 81%;
-}
-.roulette-view .scene_paralax .coin.bg9 {
-  background: url(../images/coin/5.png) center no-repeat;
-  width: 86px;
-  height: 92px;
-  top: 55%;
-  left: -2%;
-}
-.scene_paralax.left-scene .bg1 {
-  background: url(../images/left_coin/1.png) center no-repeat;
-  width: 91px;
-  height: 99px;
-  left: 64%;
-  top: 0;
-}
-.scene_paralax.left-scene .bg2 {
-  background: url(../images/left_coin/2.png) center no-repeat;
-  width: 74px;
-  height: 68px;
-  left: 0;
-  top: 8%;
-}
-.scene_paralax.left-scene .bg3 {
-  background: url(../images/left_coin/3.png) center no-repeat;
-  width: 95px;
-  height: 81px;
-  left: 38%;
-  top: 17%;
-}
-.scene_paralax.left-scene .bg4 {
-  background: url(../images/left_coin/4.png) center no-repeat;
-  width: 121px;
-  height: 109px;
-  left: 3%;
-  top: 26%;
-}
-.scene_paralax.left-scene .bg5 {
-  background: url(../images/left_coin/5.png) center no-repeat;
-  width: 99px;
-  height: 106px;
-  left: 71%;
-  top: 29%;
-}
-.scene_paralax.left-scene .bg6 {
-  background: url(../images/left_coin/6.png) center no-repeat;
-  width: 72px;
-  height: 79px;
-  left: 52%;
-  top: 62%;
-}
-.scene_paralax.left-scene .bg7 {
-  background: url(../images/left_coin/7.png) center no-repeat;
-  width: 73px;
-  height: 68px;
-  left: 17%;
-  top: 71%;
-}
-.scene_paralax.left-scene .bg8 {
-  background: url(../images/left_coin/8.png) center no-repeat;
-  width: 100px;
-  height: 84px;
-  left: 60%;
-  top: 81%;
-}
-.scene_paralax.left-scene .bg9 {
-  background: url(../images/left_coin/9.png) center no-repeat;
-  width: 128px;
-  height: 123px;
-  left: 10%;
-  top: 88%;
-}
-.scene_paralax.right-scene .bg1 {
-  background: url(../images/right_coin/1.png) center no-repeat;
-  width: 89px;
-  height: 97px;
-  top: 0;
-  left: 5%;
-}
-.scene_paralax.right-scene .bg2 {
-  background: url(../images/right_coin/2.png) center no-repeat;
-  width: 72px;
-  height: 79px;
-  top: 7%;
-  left: 59%;
-}
-.scene_paralax.right-scene .bg3 {
-  background: url(../images/right_coin/3.png) center no-repeat;
-  width: 95px;
-  height: 81px;
-  top: 19%;
-  left: 9%;
-}
-.scene_paralax.right-scene .bg4 {
-  background: url(../images/right_coin/4.png) center no-repeat;
-  width: 99px;
-  height: 106px;
-  top: 24%;
-  left: 66%;
-}
-.scene_paralax.right-scene .bg5 {
-  background: url(../images/right_coin/5.png) center no-repeat;
-  width: 100px;
-  height: 84px;
-  top: 56%;
-  left: 54%;
-}
-.scene_paralax.right-scene .bg6 {
-  background: url(../images/right_coin/6.png) center no-repeat;
-  width: 77px;
-  height: 69px;
-  top: 63%;
-  left: 0;
-}
-.scene_paralax.right-scene .bg7 {
-  background: url(../images/right_coin/7.png) center no-repeat;
-  width: 110px;
-  height: 99px;
-  top: 78%;
-  left: 47%;
-}
-.scene_paralax.right-scene .bg8 {
-  background: url(../images/right_coin/8.png) center no-repeat;
-  width: 79px;
-  height: 85px;
-  top: 94%;
-  left: 4%;
-}
 .start-info {
   align-items: stretch !important;
 }
@@ -837,12 +611,7 @@ h3:after {
 .start-info .white-space .buttons a:last-child {
   margin-right: 0;
 }
-.start-info .image {
-  width: 40%;
-  background: url("../images/Jade Token Graphic v2.png") center no-repeat;
-  background-size: cover;
-  border-radius: 30px;
-}
+
 .list-games .item {
   margin-right: 20px;
   width: 295px;
@@ -863,22 +632,6 @@ h3:after {
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #fff;
-}
-.list-games .item .info-ico {
-  background-color: #265b48;
-  background-image: url(../images/help.svg);
-  border: 1px solid #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 5;
-  top: 40px;
-  right: 30px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 4px;
-  transition: 0.3s;
 }
 .list-games .item .opacity {
   position: absolute;
@@ -946,16 +699,7 @@ h3:after {
   margin: 75px 100px 0;
   position: relative;
 }
-.start-slide-land .game-view .bg {
-  background: url(../images/start-slider-game.png) center no-repeat;
-  background-size: contain;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-}
+
 .start-slide-land .sphere-paralax.back-sphere {
   z-index: 1;
 }
@@ -982,26 +726,7 @@ h3:after {
   background-size: cover;
   position: absolute;
 }
-.start-slide-land .sphere-paralax .item .sphere.bg1 {
-  background-image: url(../images/start-slide-sphere1.png);
-  top: -1%;
-  left: -17%;
-}
-.start-slide-land .sphere-paralax .item .sphere.bg2 {
-  background-image: url(../images/start-slide-sphere2.png);
-  top: 14%;
-  right: -19%;
-}
-.start-slide-land .sphere-paralax .item .sphere.bg3 {
-  background-image: url(../images/start-slide-sphere3.png);
-  top: 63%;
-  left: -19%;
-}
-.start-slide-land .sphere-paralax .item .sphere.bg4 {
-  background-image: url(../images/start-slide-sphere4.png);
-  top: 70%;
-  right: -7%;
-}
+
 .list-games .item .play_game {
   position: absolute;
   z-index: 2;
@@ -1076,15 +801,7 @@ footer .col-two {
 .social a:last-child {
   margin-right: 0;
 }
-.social a.twitter {
-  background-image: url(../images/twitter.svg);
-}
-.social a.discord {
-  background-image: url(../images/discord.svg);
-}
-.social a.telegram {
-  background-image: url(../images/telegram.svg);
-}
+
 .social a:hover {
   opacity: 0.7;
 }
@@ -1104,12 +821,7 @@ footer .bot {
 footer .bot .languages {
   margin-right: 80px;
 }
-.error-page {
-  height: 100vh;
-  background: url(../images/error_bg.jpg) center no-repeat;
-  background-size: cover;
-  position: relative;
-}
+
 .error-page .error_text {
   font-size: 160px;
   font-style: normal;
@@ -1187,13 +899,7 @@ footer .bot .languages {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(25px);
 }
-.jade-land-game {
-  background: url(../images/bg_game.jpg) center no-repeat;
-  background-size: cover;
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-}
+
 .jade-land-game .wrap {
   position: relative;
   z-index: 3;
@@ -1682,20 +1388,7 @@ input[type="number"] {
   height: 510px;
   margin: 80px;
 }
-.centered-logo {
-  border-radius: 50%;
-  position: absolute;
-  box-sizing: border-box;
-  left: 50%;
-  top: 50%;
-  margin-top: -11%;
-  margin-left: -11%;
-  z-index: 2;
-  background: url(../images/wheel/centere-logo.png) center no-repeat;
-  width: 24%;
-  height: 24%;
-  background-size: cover;
-}
+
 .roulette-view:before {
   content: "";
   border-radius: 1000px;
@@ -1713,15 +1406,7 @@ input[type="number"] {
 .roulette-view.no-back-shadow:before {
   display: none;
 }
-.roulette-view .spin {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  /* background: url(../images/wheel/outline-circle.png) center no-repeat; */
-  background-size: contain;
-  position: relative;
-  z-index: 2;
-}
+
 @keyframes opaciter {
   0% {
     opacity: 1;
@@ -1733,32 +1418,12 @@ input[type="number"] {
     opacity: 1;
   }
 }
-.arrow {
-  background: url(/public/img/wheel/pointer.png) center no-repeat;
-  width: 6%;
-  height: 9%;
-  background-size: contain;
-  position: absolute;
-  z-index: 10;
-  left: 50%;
-  border-radius: 5px 5px 0 0;
-  transition: 0.2s;
-  top: 12%;
-  margin-left: -3%;
-}
+
 .roulette-view .spin .arrow.start-pos {
   transform: rotate(-43deg);
   margin-left: -10px;
 }
-.roulette-view .spin .bg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: url(../images/front-spin.png) center no-repeat;
-  background-size: cover;
-}
+
 .wheel {
   width: 80%;
   height: 80%;
@@ -1783,44 +1448,7 @@ input[type="number"] {
   z-index: 1;
   transform: rotate(0deg);
 } */
-.wheel .wheel-center-default {
-  overflow: hidden;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: url(../images/wheel/wheel_center_default.png) center no-repeat;
-  background-size: contain;
-  /* transform: rotate(22deg); */
-}
 
-.wheel .wheel-center-WETH {
-  overflow: hidden;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: url("../images/wheel/wheel_center_WETH copy.png") center no-repeat;
-  background-size: contain;
-  /* transform: rotate(22deg); */
-}
-
-.wheel .wheel-center-xJADE {
-  overflow: hidden;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: url("../images/wheel/wheel_center_xJADE.png") center no-repeat;
-  background-size: contain;
-  /* transform: rotate(22deg); */
-}
 
 .wheel div span {
   font-weight: 700;
@@ -1833,19 +1461,6 @@ input[type="number"] {
   width: 100%;
   text-align: left;
   padding-left: 50px;
-}
-.wheel .lamp {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
-  background-image: url(../images/wheel/check.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  box-shadow: 0 0.48131px 6.01642px 0 rgba(36, 249, 135, 1);
-  z-index: 9;
-  -webkit-animation: blicker 0.7s infinite cubic-bezier(0.66, 0, 0, 1);
-  animation: blicker 0.7s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 @keyframes blicker {
   0% {
@@ -1904,18 +1519,7 @@ input[type="number"] {
 .wheel .black .lamp {
   box-shadow: 0 0 18px 12px rgba(245, 196, 100, 0.28);
 }
-/* .wheel .lamp:after {
-  content: "";
-  position: absolute;
-  background: url(../images/wheel/lamp_blur.png);
-  border-radius: 50%;
-  width: 25px;
-  height: 108px;
-  z-index: 0;
-  top: -91px;
-  background-size: cover;
-  left: -10px;
-} */
+
 .wheel .one {
   left: 50%;
 }
@@ -2359,15 +1963,7 @@ header {
   .navigation__box .top {
     padding-bottom: 30px;
   }
-  .navigation__box .close_navi {
-    background: url(../images/mobile-close.svg) center no-repeat;
-    width: 22px;
-    height: 22px;
-    display: block;
-    position: absolute;
-    right: 30px;
-    top: 21px;
-  }
+
   .navigation__box .logo {
     display: none;
   }
@@ -2386,18 +1982,7 @@ header {
   header.black {
     background: #050e0b;
   }
-  header .logo {
-    background: url(../images/mobile-logo.svg) center no-repeat;
-    width: 340px;
-    height: 114px;
-    display: block;
-  }
-  header .navi {
-    background: url(../images/mobile-navi.svg) center no-repeat;
-    width: 30px;
-    height: 30px;
-    display: block;
-  }
+
   .navigation__box .navi ul li a {
     padding: 8px 0;
   }
@@ -2825,17 +2410,7 @@ header {
     position: relative;
     z-index: 2;
   }
-  .info_space .info_icon {
-    background-image: url(../images/help.svg);
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 2;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 3px;
-  }
+
   .info_space .space {
     width: 100%;
     height: 47px;
@@ -2943,14 +2518,7 @@ header {
     left: -14%;
     background-size: contain;
   }
-  .roulette-view .scene_paralax .coin.bg5 {
-    background: url(../images/coin/1.png) center no-repeat;
-    width: 67px;
-    height: 76px;
-    top: -8%;
-    left: 16%;
-    background-size: contain;
-  }
+
   .start-screen.jade-wheels .centr-block.roulette-view {
     width: 360px;
     height: 360px;
@@ -3132,43 +2700,6 @@ header {
   .scene_paralax.right-scene,
   .scene_paralax.left-scene {
     display: none;
-  }
-  .roulette-view:before {
-    background-image: url(../images/mobile-shadow.png);
-    filter: inherit;
-    background-color: inherit;
-    background-size: cover;
-    width: 800px;
-    height: 800px;
-    margin-left: -400px;
-    margin-top: -400px;
-  }
-  .main-screen .buttons {
-    display: flex;
-  }
-  .jade-wheels .box-rbg.game:before {
-    content: "";
-    background-image: url(../images/mobile-wheel-left-coin.png);
-    width: 203px;
-    height: 455px;
-    display: block;
-    background-size: cover;
-    position: absolute;
-    left: 50%;
-    margin-left: -340px;
-    top: 30px;
-  }
-  .jade-wheels .box-rbg.game:after {
-    content: "";
-    background-image: url(../images/mobile-wheel-right-coin.png);
-    width: 203px;
-    height: 455px;
-    display: block;
-    background-size: cover;
-    position: absolute;
-    right: 50%;
-    margin-right: -340px;
-    top: -30px;
   }
   .start-screen.jade-wheels .box-rbg.game {
     position: relative;

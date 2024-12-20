@@ -2,14 +2,11 @@
 
 import { GET_JADE_WHEEL_TOTAL_BETS } from "@/src/utils/queries";
 import React from "react";
-import { useAccount } from "wagmi";
 import { useQuery } from "@apollo/client";
 import { formatEther } from "viem";
 import StatsTable from "@/src/components/common/StatsTable";
 
 const AnalyticsVolumeJadeInWheel: React.FC = () => {
-  const { address } = useAccount();
-
   const { data, loading, error } = useQuery(GET_JADE_WHEEL_TOTAL_BETS, {
     // variables: {
     //   owner: address?.toLowerCase(),

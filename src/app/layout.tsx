@@ -7,10 +7,8 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { Providers } from "./providers";
 import { Metadata } from "next";
 
-import ToastProvider from "../contexts/ToastContext";
 import Navigation from "../components/Navigation/navigation";
 import { Analytics } from "@vercel/analytics/react";
-import LanguageProvider from "../contexts/LanguageContext";
 import { SoundContextProvider } from "../contexts/SoundContext";
 import { SubgraphProvider } from "../contexts/SubgraphContext";
 
@@ -47,23 +45,19 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <LanguageProvider>
-        <body className={`${halvar.className}`}>
-          <Providers>
-            <SubgraphProvider>
-              <SoundContextProvider>
-                <ToastProvider>
-                  <main className="">
-                    <Navigation />
-                    {children}
-                  </main>
-                </ToastProvider>
-              </SoundContextProvider>
-            </SubgraphProvider>
-          </Providers>
-          <Analytics />
-        </body>
-      </LanguageProvider>
+      <body className={`${halvar.className}`}>
+        <Providers>
+          <SubgraphProvider>
+            <SoundContextProvider>
+              <main className="">
+                <Navigation />
+                {children}
+              </main>
+            </SoundContextProvider>
+          </SubgraphProvider>
+        </Providers>
+        <Analytics />
+      </body>
     </html>
   );
 }

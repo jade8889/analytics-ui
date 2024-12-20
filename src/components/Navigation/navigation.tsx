@@ -2,11 +2,6 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
-import {
-  LanguageType,
-  useLanguageContext,
-} from "@/src/contexts/LanguageContext";
-
 export default function Navigation() {
   const [open, setOpen] = useState(false);
 
@@ -27,8 +22,6 @@ export default function Navigation() {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
-
-  const lang = useLanguageContext();
 
   return (
     <>
@@ -65,9 +58,7 @@ export default function Navigation() {
       <div className={`navigation__box ${open ? "open" : ""}`}>
         <div className="top">
           <div className="navi">
-            <div className="ttl">
-              {lang?.language == LanguageType.CN ? "Volume" : "Volume"}
-            </div>
+            <div className="ttl">Volume</div>
             <ul>
               <li>
                 {/* <a */}
@@ -76,9 +67,7 @@ export default function Navigation() {
                   onClick={() => setOpen(false)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "玉轮"
-                    : "xJade Bet Volume per player"}
+                  xJade Bet Volume per player
                   {/* </a> */}
                 </Link>
               </li>
@@ -89,9 +78,7 @@ export default function Navigation() {
                   onClick={() => setOpen(false)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "玉轮"
-                    : "Jade Bet Volume per player in Wheel"}
+                  Jade Bet Volume per player in Wheel
                   {/* </a> */}
                 </Link>
               </li>
@@ -101,9 +88,7 @@ export default function Navigation() {
                   onClick={() => setOpen(false)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "Total Bets made per player"
-                    : "Total Bets made per player"}
+                  Total Bets made per player
                 </Link>
               </li>
               <li>
@@ -112,18 +97,14 @@ export default function Navigation() {
                   onClick={() => setOpen(false)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "Volume bets rate"
-                    : "Volume bets rate"}
+                  Volume bets rate
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="navi mb-30">
-            <div className="ttl">
-              {lang?.language == LanguageType.CN ? "xJade" : "xJade"}
-            </div>
+            <div className="ttl">xJade</div>
             <ul>
               <li>
                 <Link
@@ -131,9 +112,7 @@ export default function Navigation() {
                   // onClick={() => setIsRedeemModalOpen(true)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "Rewards"
-                    : "xJade Bonus Avg Bet size"}
+                  xJade Bonus Avg Bet size
                 </Link>
               </li>
               <li>
@@ -142,20 +121,14 @@ export default function Navigation() {
                   // onClick={() => setIsRedeemModalOpen(true)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "JadeBazaar"
-                    : "size of xJade bonus claimed in Avg"}
+                  size of xJade bonus claimed in Avg
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="navi mb-30">
-            <div className="ttl">
-              {lang?.language == LanguageType.CN
-                ? "Player Value"
-                : "Player Value"}
-            </div>
+            <div className="ttl">Player Value</div>
             <ul>
               <li>
                 <Link
@@ -163,7 +136,7 @@ export default function Navigation() {
                   // onClick={() => setIsRedeemModalOpen(true)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN ? "PVPoints" : "PVPoints"}
+                  PVPoints
                 </Link>
               </li>
               <li>
@@ -172,9 +145,7 @@ export default function Navigation() {
                   // onClick={() => setIsRedeemModalOpen(true)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "Jade bet Rate with max bet in Wheel"
-                    : "Jade bet Rate with max bet in Wheel"}
+                  Jade bet Rate with max bet in Wheel
                 </Link>
               </li>
               <li>
@@ -183,9 +154,7 @@ export default function Navigation() {
                   // onClick={() => setIsRedeemModalOpen(true)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "Total EV Overall"
-                    : "Total EV Overall"}
+                  Total EV Overall
                 </Link>
               </li>
               <li>
@@ -194,9 +163,7 @@ export default function Navigation() {
                   // onClick={() => setIsRedeemModalOpen(true)}
                   className="a_with_icon"
                 >
-                  {lang?.language == LanguageType.CN
-                    ? "Total EV in each games"
-                    : "Total EV in each games"}
+                  Total EV in each games
                 </Link>
               </li>
             </ul>
