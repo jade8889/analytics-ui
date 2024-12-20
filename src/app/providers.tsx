@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { configureChains, createConfig, sepolia, WagmiConfig } from "wagmi";
-
 import { defineChain } from "viem";
 
 import { ApolloClient, InMemoryCache } from "@apollo/client";
