@@ -3,7 +3,6 @@ import "../statics/css/animate.css";
 import "../statics/css/css.css";
 import "../statics/css/slick.css";
 import localFont from "next/font/local";
-import "@rainbow-me/rainbowkit/styles.css";
 import { Providers } from "./providers";
 import { Metadata } from "next";
 
