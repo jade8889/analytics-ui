@@ -10,6 +10,7 @@ import Navigation from "../components/Navigation/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import { SoundContextProvider } from "../contexts/SoundContext";
 import { SubgraphProvider } from "../contexts/SubgraphContext";
+import SearchAddress from "../components/common/SearchAddress";
 
 // import { SubgraphProvider } from "../contexts/SubgraphContext";
 
@@ -50,7 +51,11 @@ export default async function RootLayout({
             <SoundContextProvider>
               <main className="">
                 <Navigation />
-                {children}
+                <div className="h-screen content__box">
+                  <div className="h-full p-12 start-screen">
+                    <SearchAddress /> {children}
+                  </div>
+                </div>
               </main>
             </SoundContextProvider>
           </SubgraphProvider>

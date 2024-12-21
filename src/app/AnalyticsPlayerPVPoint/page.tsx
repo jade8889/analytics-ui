@@ -29,11 +29,11 @@ const AnalyticsPlayerPVPoint: React.FC = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="h-screen content__box">
-      <div className="h-full p-12 start-screen">
-        <StatsTable statsLabel="PVPoint" statsInfo={updatedTotalBets} />
-      </div>
-    </div>
+    <StatsTable
+      title="PVPoint"
+      statsLabel="PVPoint"
+      statsInfo={updatedTotalBets}
+    />
   );
 };
 

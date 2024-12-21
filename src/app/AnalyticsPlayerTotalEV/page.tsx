@@ -12,43 +12,62 @@ import { useQuery } from "@apollo/client";
 import { formatEther } from "viem";
 import StatsTable from "@/src/components/common/StatsTable";
 import { convertTimestampToDate } from "@/src/utils";
+import { useSubgraph } from "@/src/contexts/SubgraphContext";
 
 const AnalyticsPlayerTotalEV: React.FC = () => {
-  const { data, loading, error } = useQuery(GET_EV_GENERATED, {
-    // variables: {
-    //   owner: address?.toLowerCase(),
-    // },
-  });
+  const { TotalBets } = useSubgraph();
+  // const { data, loading, error } = useQuery(GET_EV_GENERATED, {
+  // });
 
-  const totalBets: any[] = data?.evgenerateds || [];
+  // const totalEV: any[] = data?.evgenerateds || [];
 
-  const updatedTotalBets = totalBets.map((i) => ({
-    player: i.player,
-    stat: [
-      +formatEther(i.EVGenerated),
-      +formatEther(i.currentRNGFeeForTax),
-      i.currentTaxRate,
-      +formatEther(i.rngCost),
-    ],
-  }));
+  // const summary = totalEV.reduce((acc: any, item: any) => {
+  //   const player = item.player;
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  //   if (!acc[player]) {
+  //     acc[player] = {
+  //       totalEVGenerated: BigInt(0),
+  //       totalRNGFeeForTax: BigInt(0),
+  //       totalRngCost: BigInt(0),
+  //     };
+  //   }
+
+  //   acc[player].totalEVGenerated += BigInt(item.EVGenerated);
+  //   acc[player].totalRNGFeeForTax += BigInt(item.currentRNGFeeForTax);
+  //   acc[player].totalRngCost += BigInt(item.rngCost);
+
+  //   return acc;
+  // }, {});
+
+  // const summaryResult = Object.entries(summary).map(([player, totals]) => ({
+  //   player,
+  //   totalEVGenerated: totals.totalEVGenerated.toString(),
+  //   totalRNGFeeForTax: totals.totalRNGFeeForTax.toString(),
+  //   totalRngCost: totals.totalRngCost.toString(),
+  // }));
+
+  // const updatedTotalBets = summaryResult.map((i) => ({
+  //   player: i.player,
+  //   stat: [
+  //     +formatEther(i.totalEVGenerated),
+  //     +formatEther(i.totalRNGFeeForTax),
+  //     +formatEther(i.totalRngCost),
+  //   ],
+  // }));
+
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="h-screen content__box">
-      <div className="h-full p-12 start-screen">
-        <StatsTable
-          statsLabel={[
-            "EV Generated",
-            "RNG Fee for tax",
-            "Tax Rate",
-            "RNG Cost",
-          ]}
-          statsInfo={updatedTotalBets}
-        />
-      </div>
-    </div>
+    <StatsTable
+      title={"Total EV Overall"}
+      statsLabel={[
+        "EV Generated ( ETH )",
+        "RNG Fee for tax ( ETH )",
+        "RNG Cost ( ETH )",
+      ]}
+      statsInfo={TotalBets}
+    />
   );
 };
 

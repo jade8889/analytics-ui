@@ -74,7 +74,7 @@ const baseSepolia = defineChain({
   },
 });
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   uri: "https://api.studio.thegraph.com/query/49805/jade/version/latest", // Replace with your GraphQL endpoint
   cache: new InMemoryCache(),
 });

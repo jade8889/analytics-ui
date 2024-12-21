@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  GET_BET_RATE,
   GET_JADE_WHEEL_BET_RATE,
   GET_JADE_WHEEL_TOTAL_BETS,
   GET_PVPOINT,
@@ -13,8 +12,8 @@ import { formatEther } from "viem";
 import StatsTable from "@/src/components/common/StatsTable";
 import { convertTimestampToDate } from "@/src/utils";
 
-const AnalyticsVolumeBetRate: React.FC = () => {
-  const { data, loading, error } = useQuery(GET_BET_RATE, {
+const AnalyticsXJadeSizeOfXjadeBonus: React.FC = () => {
+  const { data, loading, error } = useQuery(GET_JADE_WHEEL_BET_RATE, {
     // variables: {
     //   owner: address?.toLowerCase(),
     // },
@@ -24,14 +23,15 @@ const AnalyticsVolumeBetRate: React.FC = () => {
   // betRate
   // timestamp
 
-  const totalBets: any[] = data?.pointsUpdateds || [];
+  const totalBets: any[] = data?.jadeWheelBetRates || [];
 
   const updatedTotalBets = totalBets.map((i) => ({
     player: i.player,
     stat: [
-      (+formatEther(i.totalBetVolume)).toFixed(2),
-      (+formatEther(i.xJadeBetVolume)).toFixed(2),
-      +formatEther(i.jadeWheelBetVolume),
+      (+formatEther(i.betAmount)).toFixed(2),
+      (+formatEther(i.maxBets)).toFixed(2),
+      +formatEther(i.betRate),
+      convertTimestampToDate(i.timestamp),
     ],
   }));
 
@@ -39,17 +39,12 @@ const AnalyticsVolumeBetRate: React.FC = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <StatsTable
-      title="Volume Bets Rate"
-      statsLabel={[
-        "Total Bet Volume",
-        "xJade Bet Volume",
-        "Jade Wheel Bet Volume",
-      ]}
-      statsInfo={updatedTotalBets}
-      unit="ETH"
-    />
+    <></>
+    /* <StatsTable
+          statsLabel={["Bet Amount", "Max Bets", "Bet Rate", "Bet Time"]}
+          statsInfo={updatedTotalBets}
+        /> */
   );
 };
 
-export default AnalyticsVolumeBetRate;
+export default AnalyticsXJadeSizeOfXjadeBonus;

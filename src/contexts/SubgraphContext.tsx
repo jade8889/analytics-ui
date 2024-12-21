@@ -3,7 +3,11 @@
 
 import React, { createContext, useContext } from "react";
 import { useQuery } from "@apollo/client";
-import { GET_AFFILIATE_POINTS_CLAIMS } from "../utils/queries";
+import {
+  GET_AFFILIATE_POINTS_CLAIMS,
+  GET_EV_GENERATED,
+} from "../utils/queries";
+import { formatEther } from "viem";
 // import { GET_AFFILIATE_POINTS_CLAIMS } from "../utils/queries";
 
 interface AffiliatePointsClaim {
@@ -15,9 +19,10 @@ interface AffiliatePointsClaim {
 }
 
 interface SubgraphContextType {
-  claims: AffiliatePointsClaim[] | null;
-  loading: boolean;
-  error: any;
+  TotalBets: {
+    player: string;
+    stat: number[];
+  }[];
 }
 
 const SubgraphContext = createContext<SubgraphContextType | undefined>(
@@ -27,12 +32,47 @@ const SubgraphContext = createContext<SubgraphContextType | undefined>(
 export const SubgraphProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const { data, loading, error } = useQuery(GET_AFFILIATE_POINTS_CLAIMS);
+  // Calculate EV generated
+  const { data, loading, error } = useQuery(GET_EV_GENERATED, {});
 
-  const claims = data?.affiliatePointsClaims || null;
+  const totalEV: any[] = data?.evgenerateds || [];
+
+  const summary = totalEV.reduce((acc: any, item: any) => {
+    const player = item.player;
+
+    if (!acc[player]) {
+      acc[player] = {
+        totalEVGenerated: BigInt(0),
+        totalRNGFeeForTax: BigInt(0),
+        totalRngCost: BigInt(0),
+      };
+    }
+
+    acc[player].totalEVGenerated += BigInt(item.EVGenerated);
+    acc[player].totalRNGFeeForTax += BigInt(item.currentRNGFeeForTax);
+    acc[player].totalRngCost += BigInt(item.rngCost);
+
+    return acc;
+  }, {});
+
+  const summaryResult = Object.entries(summary).map(([player, totals]) => ({
+    player,
+    totalEVGenerated: (totals as any).totalEVGenerated.toString(),
+    totalRNGFeeForTax: (totals as any).totalRNGFeeForTax.toString(),
+    totalRngCost: (totals as any).totalRngCost.toString(),
+  }));
+
+  const TotalBets = summaryResult.map((i) => ({
+    player: i.player,
+    stat: [
+      +formatEther(i.totalEVGenerated),
+      +formatEther(i.totalRNGFeeForTax),
+      +formatEther(i.totalRngCost),
+    ],
+  }));
 
   return (
-    <SubgraphContext.Provider value={{ claims, loading, error }}>
+    <SubgraphContext.Provider value={{ TotalBets }}>
       {children}
     </SubgraphContext.Provider>
   );

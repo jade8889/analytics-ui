@@ -40,14 +40,16 @@ const AnalyticsPlayerBetRateInWheel: React.FC = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="h-screen content__box">
-      <div className="h-full p-12 start-screen">
-        <StatsTable
-          statsLabel={["Bet Amount", "Max Bets", "Bet Rate", "Bet Time"]}
-          statsInfo={updatedTotalBets}
-        />
-      </div>
-    </div>
+    <StatsTable
+      title={"Jade in Wheel - bet volume : max bet "}
+      statsLabel={[
+        "Bet Amount ( Jade )",
+        "Max Bets ( Jade )",
+        "Bet Rate ( % )",
+        "Bet Time",
+      ]}
+      statsInfo={updatedTotalBets}
+    />
   );
 };
 

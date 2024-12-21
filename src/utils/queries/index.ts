@@ -77,20 +77,36 @@ export const GET_JADE_WHEEL_BET_RATE = gql`
   }
 `;
 
-export const GET_JADE_BET_RATE = gql`
-  query GetBetVolumeRate {
-    pointsUpdateds(orderBy: totalBetVolume, orderDirection: desc) {
+export const GET_EV_GENERATED = gql`
+  query GetEVGenerated {
+    evgenerateds(orderBy: EVGenerated, orderDirection: desc) {
+      EVGenerated
+      currentRNGFeeForTax
+      currentTaxRate
+      gameType
       player
-      totalBetVolume
-      xJadeBetVolume
-      jadeWheelBetVolume
+      rngCost
     }
   }
 `;
 
-export const GET_EV_GENERATED = gql`
-  query GetEVGenerated {
-    evgenerateds(orderBy: EVGenerated, orderDirection: desc) {
+export const GET_USER_INFO = gql`
+  query GetUserInfo($player: Bytes!) {
+    jadeWheelTotalBets(where: { player: $player }) {
+      player
+      totalBetAmount
+    }
+
+    pointsUpdateds(where: { player: $player }) {
+      player
+      PVPoint
+      totalBetCount
+      totalBetVolume
+      xJadeBetVolume
+      jadeWheelBetVolume
+    }
+
+    evgenerateds(where: { player: $player }) {
       EVGenerated
       currentRNGFeeForTax
       currentTaxRate
